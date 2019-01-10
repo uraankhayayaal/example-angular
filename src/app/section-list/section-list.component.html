@@ -1,3 +1,21 @@
+<table>
+  <thead>
+    <th>id</th>
+    <th>title</th>
+    <th>description</th>
+    <th>status</th>
+    <th>photo</th>
+  </thead>
+  <tbody *ngFor="let section of sections">
+    <tr>
+      <td>{{ section.id }}</td>
+      <td>{{ section.title }}</td>
+      <td>{{ section.description }}</td>
+      <td>{{ section.status }}</td>
+      <td><img src="{{ section.photo }}" alt="{{ section.title }}"></td>
+    </tr>
+  </tbody>
+</table>
 <div *ngFor="let section of sections">
   <p>
     {{ section.id }}

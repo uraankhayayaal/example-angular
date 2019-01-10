@@ -1,6 +1,11 @@
 <h1>
   Create Section
   </h1>
+
+  <input type="text" [(ngModel)]="section.title">
+  <p>{{section.title}}</p>
+  <input type="text" [(ngModel)]="section.description">
+  
   <button (click)="createSection()">
       Create Section
   </button>

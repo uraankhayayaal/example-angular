@@ -8,23 +8,23 @@ import { ApiService } from  '../api.service';
 })
 export class SectionCreateComponent implements OnInit {
 
-  constructor(private  apiService:  ApiService) { }
+  section: {};
+
+  constructor(private  apiService:  ApiService) {
+    this.section = {
+      title:  "",
+      description:  "",
+      photo:  "https://assets.gitlab-static.net/uploads/-/system/user/avatar/668646/avatar.png?width=90",
+      isPublic:  true,
+    }
+  }
 
   ngOnInit() {
   }
 
   createSection(){
-
-    var section  = {
-        title:  "This is the third section",
-        description:  "Home N 333 Apartment 300",
-        photo:  "This is the third section",
-        isPublic:  true,
-    };
-
-    this.apiService.createSection(section).subscribe((response) => {
+    this.apiService.createSection(this.section).subscribe((response) => {
         console.log(response);
     });
-
   }
 }
