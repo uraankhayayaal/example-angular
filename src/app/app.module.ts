@@ -8,12 +8,20 @@ import { SectionListComponent } from './section-list/section-list.component';
 import { SectionCreateComponent } from './section-create/section-create.component';
 
 import { HttpClientModule } from  '@angular/common/http';
+import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
+import { PortfolioCreateComponent } from './portfolio-create/portfolio-create.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SectionListComponent,
-    SectionCreateComponent
+    SectionCreateComponent,
+    PortfolioListComponent,
+    PortfolioCreateComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

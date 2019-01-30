@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>id</th>
+    <th>title</th>
+    <th>description</th>
+    <th>status</th>
+    <th>photo</th>
+  </thead>
+  <tbody *ngFor="let portfolio of portfolios">
+    <tr>
+      <td>{{ portfolio.id }}</td>
+      <td>{{ portfolio.title }}</td>
+      <td>{{ portfolio.description }}</td>
+      <td>{{ portfolio.status }}</td>
+      <td><img src="{{ portfolio.photo }}" alt="{{ portfolio.title }}"></td>
+    </tr>
+  </tbody>
+</table>
