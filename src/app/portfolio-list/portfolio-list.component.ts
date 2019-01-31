@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from  '../api.service';
+import { PortfolioModel } from '../models/portfolio.model';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -8,7 +9,7 @@ import { ApiService } from  '../api.service';
 })
 export class PortfolioListComponent implements OnInit {
 
-  private  portfolios:  Array<object> = [];
+  private  portfolios:  Array<PortfolioModel>;
 
   constructor(private  apiService:  ApiService) { }
 
@@ -17,10 +18,17 @@ export class PortfolioListComponent implements OnInit {
   }
 
   public getPortfolios(){
-    this.apiService.getPortfolios().subscribe((data:  Array<object>) => {
-        this.portfolios  =  data;
-        console.log(data);
+    this.apiService.getPortfolios().subscribe((data:  Array<PortfolioModel>) => {
+      var portfolios = [];
+      data.map((item: PortfolioModel) => {
+        portfolios.push(item);
+      })
+      this.portfolios = portfolios;
     });
+  }
+
+  public showInfo(id){
+    console.log(id)
   }
 
 }
